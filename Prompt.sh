@@ -1,5 +1,6 @@
 #! /bin/sh
 
+# Error . Need to modify 
 
 echo "Hello $USER!"
 count=1
