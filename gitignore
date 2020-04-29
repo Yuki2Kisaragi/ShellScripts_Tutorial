@@ -1,3 +1,2 @@
 *.tmp
-
-./Practice/*.tmp
+*.txt
