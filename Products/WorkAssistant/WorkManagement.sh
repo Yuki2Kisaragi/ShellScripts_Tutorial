@@ -3,9 +3,9 @@
 
 TODAY=`date +"%Y%m%d"`
 WORK_START_TIME=`date +"%H:%M"`
+TASK_LIST=`cat Task.txt`
 
 if [ -e Output/WorkLog_$TODAY.txt ]; then
-    :
     echo " 'WorkLog_$TODAY.txt' already exists."
 else
 
@@ -26,6 +26,16 @@ else
 
     echo "Please your Task!"
     echo "-------------------------------------"    >> Output/WorkLog_$TODAY.txt
+    
+    cnt=0
+    while read line
+    do
+    cnt=$(($cnt +1))
+    echo "TASK $cnt : $line"
+    echo "TASK $cnt : $line" >> Output/WorkLog_$TODAY.txt
+    done <<END
+    $TASK_LIST
+END
 
     echo "-------------------------------------"    >> Output/WorkLog_$TODAY.txt
 
